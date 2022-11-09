@@ -15,8 +15,8 @@ docker build -t mong-sink:latest .
 
 
 
-Deploy confluent operator
-================================
+Deploy confluent operator in kubernetes
+==========================================
 Install Helm
 
 helm repo add confluentinc https://packages.confluent.io/helm
@@ -44,8 +44,8 @@ NAME                                            DESIRED   CURRENT   READY   AGE
 replicaset.apps/confluent-operator  
 
 
-Set up Secrets
-==============
+Set up Secrets in kubernetes
+==============================
 Create a new file named ccloud-credentials.txt of confluent cloud Kafka cluster
 
 username=<your_cluster_key>
@@ -64,8 +64,8 @@ kubectl create secret generic ccloud-sr-credentials --from-file=basic.txt=ccloud
 
 
 
-Deploy Connect pod
-===================
+Deploy Connect pod in kubernetes
+===================================
 Deploy the connect :
 
 kubectl apply -f ./connect.yaml
@@ -102,8 +102,8 @@ statefulset.apps/connect
 
 
 
-Deploy Connector configuration
-==========================
+Deploy Connector configuration in kubernetes
+=============================================
 Deploy the connector :
 
 kubectl apply -f ./connector.yaml
