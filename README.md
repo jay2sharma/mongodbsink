@@ -1,4 +1,22 @@
 # mongodbsink
+Self Managed MongoDB Sink Connector in kubernetes
+In this example, you'll set up the following:
+
+* Create extended Mongo Sink image
+ 
+* Self-managed Kafka Connect cluster connected to Confluent Cloud
+
+* Install and manage the Mongo Sink  connector plugin through the declarative Connector CRD
+
+* Install Mongo Sink Configuration 
+
+
+Set up Pre-requisites:
+
+Create namespace
+
+kubectl create ns confluent
+
 
 Create Mongodb sink Image with confluentinc base server connect
 
