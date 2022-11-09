@@ -12,6 +12,10 @@ Copy jar from above zip file in to new plugins directory
 
 docker build -t mong-sink:latest . 
 
+docker tag mong-sink:latest <repouser>/connect:latest
+
+docker push <repouser>/connect:latest 
+
 
 
 
