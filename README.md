@@ -19,6 +19,7 @@ docker build -t mong-sink:latest .
 Deploy confluent operator
 ================================
 helm repo add confluentinc https://packages.confluent.io/helm
+
 helm upgrade --install operator confluentinc/confluent-for-kubernetes -n confluent
 
 Set up Secrets
