@@ -11,11 +11,7 @@ In this example, you'll set up the following:
 * Install Mongo Sink Configuration 
 
 
-Set up Pre-requisites:
 
-Create namespace
-
-kubectl create ns confluent
 
 
 Create Extended Mongo Sink Image
@@ -37,7 +33,11 @@ docker tag mong-sink:latest <repouser>/connect:latest
 
 docker push <repouser>/connect:latest 
 
+**Set up Pre-requisites:**
 
+Create namespace
+
+kubectl create ns confluent
 
 
 Deploy confluent operator in kubernetes
