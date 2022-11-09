@@ -18,6 +18,9 @@ Create namespace
 kubectl create ns confluent
 
 
+Create Extended Mongo Sink Image
+====================================
+
 Create Mongodb sink Image with confluentinc base server connect
 
 1. Download Mongodb sink jar from confluent 
