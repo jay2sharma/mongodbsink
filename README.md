@@ -8,7 +8,7 @@ https://www.confluent.io/hub/mongodb/kafka-connect-mongodb
 
 Copy jar from above zip file in to new plugins directory
 
-2. Create image from Docker file 
+2. Create image from Docker file in local and push to image repo
 
 docker build -t mong-sink:latest . 
 
