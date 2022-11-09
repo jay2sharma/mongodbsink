@@ -6,13 +6,33 @@ spec:
   
   replicas: 1
   image:
-    application: mong-sink:latest
+    application: mong-sink:latest.     
     init: confluentinc/confluent-init-container:2.4.1
-  
+  podTemplate:
+   resources:
+     requests:
+       cpu: 1000m
+       memory: 512Mi
+   probe:
+     liveness:
+       periodSeconds: 10
+       failureThreshold: 5
+       timeoutSeconds: 30
+       initialDelaySeconds: 100
+     readiness:
+       periodSeconds: 10
+       failureThreshold: 5
+       timeoutSeconds: 30
+       initialDelaySeconds: 100
+   podSecurityContext:
+     fsGroup: <>
+     runAsUser: <>
+     runAsNonRoot: true
+
             
   dependencies:
     kafka:
-     bootstrapEndpoint: <confluent cloud bootstrap>:9092
+     bootstrapEndpoint: <host>:9092
      authentication:
        type: plain
        jaasConfig:
@@ -20,4 +40,9 @@ spec:
      tls:
         enabled: true
         ignoreTrustStoreConfig: true
-     
+    schemaRegistry:
+       url: <your_schema_registry_url>
+       authentication:
+         type: basic
+         basic:
+           secretRef: ccloud-sr-credentials
