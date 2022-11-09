@@ -1,8 +1,8 @@
-# mongodbsink
-Self Managed MongoDB Sink Connector in kubernetes
+# Self Managed MongoDB Sink Connector in kubernetes
+
 In this example, you'll set up the following:
 
-* Create extended Mongo Sink image
+* Create extended Mongo Sink image with confluent
  
 * Self-managed Kafka Connect cluster connected to Confluent Cloud
 
