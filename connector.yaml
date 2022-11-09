@@ -1,0 +1,22 @@
+---
+apiVersion: platform.confluent.io/v1beta1
+kind: Connector
+metadata:
+  name: mongodb-atlas-sink3
+  namespace: confluent
+spec:
+  class: "com.mongodb.kafka.connect.MongoSinkConnector"
+  taskMax: 1
+  connectClusterRef:
+    name: connect
+    namespace: confluent
+  configs:
+    
+    "topics": "<topic name>"
+    "connection.uri": "mongodb+srv://<user>:<passwd>@<host>"
+    "database": "<db>"
+    "collection": "<collectn>"
+    "tasks.max": "1"
+
+   
+    

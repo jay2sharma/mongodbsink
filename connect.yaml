@@ -1,0 +1,23 @@
+apiVersion: platform.confluent.io/v1beta1
+kind: Connect
+metadata:
+  name: connect
+spec:
+  
+  replicas: 1
+  image:
+    application: mong-sink:latest
+    init: confluentinc/confluent-init-container:2.4.1
+  
+            
+  dependencies:
+    kafka:
+     bootstrapEndpoint: <confluent cloud bootstrap>:9092
+     authentication:
+       type: plain
+       jaasConfig:
+         secretRef: ccloud-credentials
+     tls:
+        enabled: true
+        ignoreTrustStoreConfig: true
+     
