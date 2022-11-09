@@ -3,8 +3,10 @@
 Create Mongodb sink Image with confluentinc base server connect
 
 1. Download Mongodb sink jar from confluent 
+
 https://www.confluent.io/hub/mongodb/kafka-connect-mongodb
- Copy jar from above zip file in to new plugins directory
+
+Copy jar from above zip file in to new plugins directory
 
 2. Create image from Docker file 
 
